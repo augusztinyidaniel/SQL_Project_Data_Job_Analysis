@@ -20,7 +20,7 @@ ORDER BY
     first_quadrant.job_id;
 
 /*
-❓Question:
+❓ Question:
 
 Retrieve the job id, job title short, job location, job via, skill and skill type for each job posting from the first quarter (January to March). Using a subquery to combine job postings from the first quarter (these tables were created in the Advanced Section - Practice Problem 6 [include timestamp of Youtube video]) Only include postings with an average yearly salary greater than $70,000.
 

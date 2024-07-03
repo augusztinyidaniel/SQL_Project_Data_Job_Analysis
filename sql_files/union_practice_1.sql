@@ -27,7 +27,7 @@ ORDER BY
 	job_id; 
 
 /*
-❓Question:
+❓ Question:
 
 Create a unified query that categorizes job postings into two groups: those with salary information (salary_year_avg or salary_hour_avg is not null) and those without it. Each job posting should be listed with its job_id, job_title, and an indicator of whether salary information is provided.
 
