@@ -1,8 +1,8 @@
 /*
-Answer: What are the top skills based on salary?
+Answer: What are the top skills for entry level analysts based on salary?
 - Look at the average salary associated with each skill for Data Analyst positions
-- Focuses on roles with specified salaries, regardless of location
-- Why? It reveals how different skills impact salary levels for Data Analysts and
+- Focuses on entry level roles with specified salaries
+- Why? It reveals how different skills impact salary levels for beginner Data Analysts and
     helps identify the most financially rewarding skills to acquire or improve
 */
 
@@ -14,8 +14,9 @@ INNER JOIN skills_job_dim ON  job_postings_fact.job_id = skills_job_dim.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 WHERE
     job_postings_fact.job_title_short = 'Data Analyst'
+    AND (job_postings_fact.job_title ILIKE '%Entry%' OR
+         job_postings_fact.job_title ILIKE '%Junior%')
     AND salary_year_avg IS NOT NULL
-    AND job_postings_fact.job_work_from_home = TRUE
 GROUP BY
     skills
 ORDER BY

@@ -1,8 +1,8 @@
 /*
-Ouestion: What skills are required for the top-paying data anatyst jobs?
-- Use the top 10 highest-paying Data Anatyst jobs from first query
+Ouestion: What skills are required for the top-paying data anatyst jobs in Hungary?
+- Use the top 10 highest-paying Hungary based Data Anatyst jobs from first query
 - Add the specific skills required for these roles
-- Why? It provides detaited look at which high—paying jobs demand certain skills,
+- Why? It provides detaited look at which high—paying jobs demand certain skills in Hungary,
     helping job seekers understand which skills to develop that align with top salaries
 */
 
@@ -16,9 +16,9 @@ WITH top_paying_jobs AS (
         job_postings_fact
         LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
     WHERE
-        job_title_short = 'Data Analyst' AND
-        job_location = 'Anywhere' AND
-        salary_year_avg IS NOT NULL
+        job_title_short = 'Data Analyst'
+        AND job_location LIKE '%Hungary%'
+        AND salary_year_avg IS NOT NULL
     ORDER BY
         salary_year_avg DESC
     LIMIT 10
